@@ -1,4 +1,5 @@
 import React from 'react'
+import { Router, Route } from 'react-router'
 
 class App extends React.Component {
   constructor () {
@@ -15,4 +16,9 @@ class App extends React.Component {
     this.setState({ n: this.state.n + 1 })
   }
 }
-React.render(<App />, document.querySelector('#content'))
+
+React.render((
+  <Router>
+    <Route path="/" component={App} />
+  </Router>
+), document.getElementById('content'))
